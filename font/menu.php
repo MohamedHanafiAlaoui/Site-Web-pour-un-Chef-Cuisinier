@@ -103,7 +103,7 @@ include 'conect_db.php';
             <?php
             session_start();
             include 'conect_db.php';
-            if (isset($_SESSION["Email"])) {
+            if (isset($_SESSION["id"])) {
                echo ' <li class="nav-item dropdown">
             <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action">
                 <img src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg" class="avatar" alt="Avatar"> Antonio Moreno <b class="caret"></b>

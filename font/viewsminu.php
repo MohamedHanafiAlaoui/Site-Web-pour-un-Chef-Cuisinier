@@ -140,7 +140,7 @@ include './conect_db.php';
                 <?php
                 session_start();
                 include 'conect_db.php';
-                if (isset($_SESSION["Email"])) {
+                if (isset($_SESSION["id"])) {
                     echo '<li class="nav-item dropdown">
                             <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action">
                                 <img src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg" class="avatar" alt="Avatar"> Antonio Moreno <b class="caret"></b>
@@ -171,8 +171,9 @@ include './conect_db.php';
     <div class="food-cards">
 
     <?php
-    if(isset($_GET['id'])){
         $id = $_GET['id'];
+
+    if(isset($_GET['id'])){
         $sql = "SELECT * FROM `Plats` WHERE id_Menu = $id";
         $result = mysqli_query($conn, $sql);
 
@@ -194,7 +195,7 @@ include './conect_db.php';
 
     </div>
 
-    <a href="#" class="btn">Explore More</a>
+    <a href="reservation.php?id=<?php echo ($id ); ?>" class="btn">Explore More</a>
 
     <div class="footer">
         <p>&copy; 2024 Inspired Designs. All rights reserved.</p>

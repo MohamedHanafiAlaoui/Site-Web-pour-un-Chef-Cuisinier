@@ -14,7 +14,7 @@ if (
     $LastName = trim($_POST['LastName']);
     $FristName = trim($_POST['nom']);
     $Email = trim($_POST['Email']);
-    $Password = trim($_POST['Password']);
+    $Password = md5(trim($_POST['Password']));
     $cin = trim($_POST['cin']);
     $FristDate = trim($_POST['inputDate']);
 

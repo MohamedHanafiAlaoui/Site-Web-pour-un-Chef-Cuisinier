@@ -21,8 +21,22 @@ include './conect_db.php';
         <div class="menu">
 
           <ul>
+
+
+                        <?php
             
-            <li><a href="./dasboard.php" aria-label="Home"><i class="fa-solid fa-house"></i></a></li>
+            
+            if (isset($_SESSION["cin"])) {
+              $cin = $_SESSION["cin"];
+              $sql1="SELECT * FROM `ROLES` WHERE cin = '$cin'   LIMIT 1";
+              $result = mysqli_query($conn,$sql1);
+              $row =mysqli_fetch_assoc($result);
+              $TYPE=$row['TYPE'];
+
+              if ($TYPE != 'user') {
+                ?>
+
+<li><a href="./dasboard.php" aria-label="Home"><i class="fa-solid fa-house"></i></a></li>
             <li><a href="#" aria-label="Add" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="fa-solid fa-plus"></i></a>
               <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header">
@@ -40,11 +54,25 @@ include './conect_db.php';
             <li><a href="#" aria-label="Comments"><i class="fa-solid fa-comment"></i></a>
    
             </li>
+
+
+                <?php
+              }
+
+            }
+          
+
+                ?>
+
             <li><a href="./" aria-label="Logout"><i class="fa-solid fa-right-to-bracket"></i></a></li>
           </ul>
         </div>
       </aside>
       <main>
+        <?php
+              if ($TYPE != 'user') {
+                ?>
+
         <header>
           <h1>ANALYTICS</h1>
         </header>
@@ -125,6 +153,9 @@ include './conect_db.php';
             </div>
           </div>
         </section>
+        <?php
+    }
+    ?>
       </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

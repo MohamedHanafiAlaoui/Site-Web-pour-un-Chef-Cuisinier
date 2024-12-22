@@ -32,19 +32,23 @@
             <?php
             session_start();
             include 'conect_db.php';
-            if (isset($_SESSION["Email"])) {
-               echo ' <li class="nav-item dropdown">
+            if (isset($_SESSION["id"])) {
+                ?>
+
+            
+                <li class="nav-item dropdown">
             <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action">
-                <img src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg" class="avatar" alt="Avatar"> Antonio Moreno <b class="caret"></b>
+                <img src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg" class="avatar" alt="Avatar"> <?php echo $_SESSION["LastName"]; ?> <b class="caret"></b>
             </a>
             <div class="dropdown-menu">
                 <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
                 <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
-                <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+                <a href="./dasboard.php" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
                 <div class="divider dropdown-divider"></div>
                 <a href="logout.php" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
             </div>
             </li>';
+            <?php
             }else {
                 echo '<li><a href="./login.php">login</a></li>';
             }
