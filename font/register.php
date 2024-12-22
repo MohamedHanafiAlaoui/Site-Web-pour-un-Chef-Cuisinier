@@ -14,11 +14,13 @@ if (
     $LastName = trim($_POST['LastName']);
     $FristName = trim($_POST['nom']);
     $Email = trim($_POST['Email']);
-    $Password = md5(trim($_POST['Password']));
+    $Password = trim($_POST['Password']);
     $cin = trim($_POST['cin']);
     $FristDate = trim($_POST['inputDate']);
 
-    $query = "insert into Users(FristName,LastName,Password,cin,Email,FirstDate ) values ('$FristName','$LastName','$Password' ,'$cin','$Email','$FristDate')";
+    $hashed_password = password_hash($Password, PASSWORD_DEFAULT);
+
+    $query = "insert into Users(FristName,LastName,Password,cin,Email,FirstDate ) values ('$FristName','$LastName','$hashed_password' ,'$cin','$Email','$FristDate')";
 
     mysqli_query($conn,$query);
     $query2 = "insert into ROLES(cin,TYPE) values ('$cin','user' )";
