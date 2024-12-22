@@ -38,3 +38,6 @@ Design :
 Responsive Design : Le site doit être compatible avec toutes les tailles d’écrans (mobile, tablette, desktop).
 Esthétique : Design moderne et élégant avec des couleurs raffinées pour représenter le luxe.
 UX/UI : Interface intuitive et agréable pour une navigation fluide.
+
+
+https://www.canva.com/design/DAGaDpnAkd4/bvxembY3LuN_j24cNl_ZJw/edit?utm_content=DAGaDpnAkd4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
